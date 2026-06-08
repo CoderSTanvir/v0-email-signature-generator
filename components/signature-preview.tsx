@@ -238,3 +238,5 @@ export function SignaturePreview({ data }: { data: SignatureData }) {
     </div>
   )
 }
+
+}
