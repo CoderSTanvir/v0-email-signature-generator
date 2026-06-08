@@ -59,6 +59,9 @@ function buildSignatureHtml(data: SignatureData) {
     data.linkedin && { label: "LinkedIn", href: withProtocol(data.linkedin) },
     data.github && { label: "GitHub", href: withProtocol(data.github) },
     data.twitter && { label: "Twitter", href: withProtocol(data.twitter) },
+    data.facebook && { label: "Facebook", href: withProtocol(data.facebook) },
+    data.youtube && { label: "YouTube", href: withProtocol(data.youtube) },
+    data.reddit && { label: "Reddit", href: withProtocol(data.reddit) },
   ].filter(Boolean) as { label: string; href: string }[]
 
   const avatar = data.image
@@ -100,6 +103,9 @@ function buildSignatureText(data: SignatureData) {
     data.linkedin,
     data.github,
     data.twitter,
+    data.facebook,
+    data.youtube,
+    data.reddit,
   ]
     .filter(Boolean)
     .join("\n")
@@ -140,6 +146,9 @@ export function SignaturePreview({ data }: { data: SignatureData }) {
     { src: "/icons/linkedin.svg", label: "LinkedIn", href: data.linkedin },
     { src: "/icons/github.svg", label: "GitHub", href: data.github },
     { src: "/icons/x.svg", label: "Twitter", href: data.twitter },
+    { src: "/icons/facebook.svg", label: "Facebook", href: data.facebook },
+    { src: "/icons/youtube.svg", label: "YouTube", href: data.youtube },
+    { src: "/icons/reddit.svg", label: "Reddit", href: data.reddit },
   ]
     .filter((s) => s.href)
     .map((s) => ({ ...s, href: withProtocol(s.href) }))
