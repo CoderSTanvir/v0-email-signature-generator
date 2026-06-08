@@ -68,6 +68,9 @@ export function SignatureForm({ data, onChange }: Props) {
     { key: "linkedin", label: "LinkedIn", placeholder: "linkedin.com/in/ada", src: "/icons/linkedin.svg" },
     { key: "github", label: "GitHub", placeholder: "github.com/ada", src: "/icons/github.svg" },
     { key: "twitter", label: "Twitter / X", placeholder: "x.com/ada", src: "/icons/x.svg" },
+    { key: "facebook", label: "Facebook", placeholder: "facebook.com/ada", src: "/icons/facebook.svg" },
+    { key: "youtube", label: "YouTube", placeholder: "youtube.com/@ada", src: "/icons/youtube.svg" },
+    { key: "reddit", label: "Reddit", placeholder: "reddit.com/user/ada", src: "/icons/reddit.svg" },
   ]
 
   return (
