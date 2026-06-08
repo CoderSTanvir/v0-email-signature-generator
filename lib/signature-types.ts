@@ -6,6 +6,7 @@ export type SignatureData = {
   phone: string
   website: string
   accent: string
+  image: string
 }
 
 export const defaultSignature: SignatureData = {
@@ -16,4 +17,5 @@ export const defaultSignature: SignatureData = {
   phone: "+1 (555) 012-3456",
   website: "engines.com",
   accent: "#a855f7",
+  image: "",
 }

@@ -56,14 +56,19 @@ export function SignaturePreview({ data }: { data: SignatureData }) {
       <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 shadow-2xl backdrop-blur-sm sm:p-8">
         <div className="flex items-start gap-5">
           <div
-            className="flex size-16 shrink-0 items-center justify-center rounded-2xl text-xl font-semibold text-white shadow-lg"
+            className="flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl text-xl font-semibold text-white shadow-lg"
             style={{
-              background: `linear-gradient(135deg, ${data.accent}, #3b82f6)`,
+              background: data.image ? undefined : `linear-gradient(135deg, ${data.accent}, #3b82f6)`,
               boxShadow: `0 8px 30px ${data.accent}55`,
             }}
             aria-hidden="true"
           >
-            {initials(data.name)}
+            {data.image ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={data.image || "/placeholder.svg"} alt="" className="size-full object-cover" />
+            ) : (
+              initials(data.name)
+            )}
           </div>
 
           <div className="min-w-0 flex-1">
