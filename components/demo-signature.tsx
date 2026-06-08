@@ -46,6 +46,7 @@ export function DemoSignature() {
     image: "",
     linkedin: "https://www.linkedin.com/in/shahriar-tanvir-3353a7402/",
     github: "https://github.com/CoderSTanvir",
+    facebook: "https://www.facebook.com/shahriar.tanvir.3152",
     twitter: "",
   }
 
@@ -59,6 +60,7 @@ export function DemoSignature() {
   const socialLinks: { src: string; label: string; href: string }[] = [
     { src: "/icons/linkedin.svg", label: "LinkedIn", href: data.linkedin },
     { src: "/icons/github.svg", label: "GitHub", href: data.github },
+    { src: "/icons/facebook.svg", label: "Facebook", href: data.facebook },
   ]
     .filter((s) => s.href)
     .map((s) => ({ ...s, href: withProtocol(s.href) }))
