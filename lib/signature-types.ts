@@ -10,6 +10,9 @@ export type SignatureData = {
   linkedin: string
   github: string
   twitter: string
+  facebook: string
+  youtube: string
+  reddit: string
 }
 
 export const defaultSignature: SignatureData = {
@@ -24,4 +27,7 @@ export const defaultSignature: SignatureData = {
   linkedin: "",
   github: "",
   twitter: "",
+  facebook: "",
+  youtube: "",
+  reddit: "",
 }
