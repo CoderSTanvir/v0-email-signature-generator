@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { SignatureForm } from "@/components/signature-form"
 import { SignaturePreview } from "@/components/signature-preview"
+import { DemoSignature } from "@/components/demo-signature"
 import { defaultSignature, type SignatureData } from "@/lib/signature-types"
 
 export default function Page() {
@@ -35,8 +36,9 @@ export default function Page() {
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-md sm:p-8">
             <SignatureForm data={data} onChange={setData} />
           </div>
-          <div className="lg:sticky lg:top-12">
+          <div className="lg:sticky lg:top-12 space-y-8">
             <SignaturePreview data={data} />
+            <DemoSignature />
           </div>
         </div>
       </div>
