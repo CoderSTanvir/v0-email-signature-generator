@@ -7,6 +7,27 @@ import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
 import { Upload, X } from "lucide-react"
 
+function BrandIcon({ src, className }: { src: string; className?: string }) {
+  return (
+    <span
+      aria-hidden="true"
+      className={className}
+      style={{
+        backgroundColor: "currentColor",
+        WebkitMaskImage: `url(${src})`,
+        maskImage: `url(${src})`,
+        WebkitMaskRepeat: "no-repeat",
+        maskRepeat: "no-repeat",
+        WebkitMaskSize: "contain",
+        maskSize: "contain",
+        WebkitMaskPosition: "center",
+        maskPosition: "center",
+        display: "inline-block",
+      }}
+    />
+  )
+}
+
 const accents: { label: string; value: string; swatch: string }[] = [
   { label: "Violet", value: "#a855f7", swatch: "bg-[#a855f7]" },
   { label: "Blue", value: "#3b82f6", swatch: "bg-[#3b82f6]" },
@@ -119,11 +140,42 @@ export function SignatureForm({ data, onChange }: Props) {
       <Separator className="bg-border" />
 
       <div className="space-y-3">
+        <Label className="text-xs font-medium text-muted-foreground">Social links (optional)</Label>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {socials.map((s) => {
+            return (
+              <div key={s.key} className="flex flex-col gap-2">
+                <Label htmlFor={s.key} className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
+                  <BrandIcon src={s.src} className="size-3.5" />
+                  {s.label}
+                </Label>
+                <Input
+                  id={s.key}
+                  type="url"
+                  placeholder={s.placeholder}
+                  value={data[s.key]}
+                  onChange={(e) => set(s.key, e.target.value)}
+                />
+              </div>
+            )
+          })}
+        </div>
+      </div>
+
+      <Separator className="bg-border" />
+
+      <div className="space-y-3">
         <Label className="text-xs font-medium text-muted-foreground">Accent color</Label>
         <div className="flex flex-wrap gap-2">
           {accents.map((a) => {
             const active = data.accent === a.value
-            return (
+  const socials: { key: keyof SignatureData; label: string; placeholder: string; src: string }[] = [
+    { key: "linkedin", label: "LinkedIn", placeholder: "linkedin.com/in/ada", src: "/icons/linkedin.svg" },
+    { key: "github", label: "GitHub", placeholder: "github.com/ada", src: "/icons/github.svg" },
+    { key: "twitter", label: "Twitter / X", placeholder: "x.com/ada", src: "/icons/x.svg" },
+  ]
+
+  return (
               <button
                 key={a.value}
                 type="button"

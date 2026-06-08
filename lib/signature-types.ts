@@ -7,6 +7,9 @@ export type SignatureData = {
   website: string
   accent: string
   image: string
+  linkedin: string
+  github: string
+  twitter: string
 }
 
 export const defaultSignature: SignatureData = {
@@ -18,4 +21,7 @@ export const defaultSignature: SignatureData = {
   website: "engines.com",
   accent: "#a855f7",
   image: "",
+  linkedin: "",
+  github: "",
+  twitter: "",
 }
