@@ -10,24 +10,18 @@ export type SignatureData = {
   linkedin: string
   github: string
   twitter: string
-  facebook: string
-  reddit: string
-  youtube: string
 }
 
 export const defaultSignature: SignatureData = {
-  name: "Shahriar Tanvir",
-  title: "Student (Software Engineering)",
-  company: "Daffodil International University",
-  email: "shahriartanvir285@gmail.com",
-  phone: "",
-  website: "",
-  accent: "#3b82f6",
-  image: "/demo-profile.png",
-  linkedin: "https://www.linkedin.com/in/shahriar-tanvir-3353a7402/",
-  github: "https://github.com/CoderSTanvir",
+  name: "Ada Lovelace",
+  title: "Lead Engineer",
+  company: "Analytical Engines Inc.",
+  email: "ada@engines.com",
+  phone: "+1 (555) 012-3456",
+  website: "engines.com",
+  accent: "#a855f7",
+  image: "",
+  linkedin: "",
+  github: "",
   twitter: "",
-  facebook: "https://www.facebook.com/shahriar.tanvir.3152",
-  reddit: "",
-  youtube: "",
 }

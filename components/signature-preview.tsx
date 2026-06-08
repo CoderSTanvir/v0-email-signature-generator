@@ -59,9 +59,6 @@ function buildSignatureHtml(data: SignatureData) {
     data.linkedin && { label: "LinkedIn", href: withProtocol(data.linkedin) },
     data.github && { label: "GitHub", href: withProtocol(data.github) },
     data.twitter && { label: "Twitter", href: withProtocol(data.twitter) },
-    data.facebook && { label: "Facebook", href: withProtocol(data.facebook) },
-    data.reddit && { label: "Reddit", href: withProtocol(data.reddit) },
-    data.youtube && { label: "YouTube", href: withProtocol(data.youtube) },
   ].filter(Boolean) as { label: string; href: string }[]
 
   const avatar = data.image
@@ -103,9 +100,6 @@ function buildSignatureText(data: SignatureData) {
     data.linkedin,
     data.github,
     data.twitter,
-    data.facebook,
-    data.reddit,
-    data.youtube,
   ]
     .filter(Boolean)
     .join("\n")
