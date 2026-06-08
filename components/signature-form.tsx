@@ -64,6 +64,12 @@ export function SignatureForm({ data, onChange }: Props) {
     { key: "website", label: "Website", placeholder: "engines.com", type: "url" },
   ]
 
+  const socials: { key: keyof SignatureData; label: string; placeholder: string; src: string }[] = [
+    { key: "linkedin", label: "LinkedIn", placeholder: "linkedin.com/in/ada", src: "/icons/linkedin.svg" },
+    { key: "github", label: "GitHub", placeholder: "github.com/ada", src: "/icons/github.svg" },
+    { key: "twitter", label: "Twitter / X", placeholder: "x.com/ada", src: "/icons/x.svg" },
+  ]
+
   return (
     <div className="space-y-6">
       <div className="space-y-1.5">
@@ -169,13 +175,7 @@ export function SignatureForm({ data, onChange }: Props) {
         <div className="flex flex-wrap gap-2">
           {accents.map((a) => {
             const active = data.accent === a.value
-  const socials: { key: keyof SignatureData; label: string; placeholder: string; src: string }[] = [
-    { key: "linkedin", label: "LinkedIn", placeholder: "linkedin.com/in/ada", src: "/icons/linkedin.svg" },
-    { key: "github", label: "GitHub", placeholder: "github.com/ada", src: "/icons/github.svg" },
-    { key: "twitter", label: "Twitter / X", placeholder: "x.com/ada", src: "/icons/x.svg" },
-  ]
-
-  return (
+            return (
               <button
                 key={a.value}
                 type="button"
